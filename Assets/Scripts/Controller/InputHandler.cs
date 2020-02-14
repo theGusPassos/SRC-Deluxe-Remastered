@@ -11,7 +11,8 @@ namespace Assets.Scripts.Controller
             float horizontalInput = CommandInterface.GetHorizontalInput();
             float verticalInput = CommandInterface.GetVerticalInput();
 
-            carController.MoveCar(horizontalInput, 0, 0);
+            carController.Steer(horizontalInput);
+            carController.Accelerate(verticalInput);
         }
     }
 }

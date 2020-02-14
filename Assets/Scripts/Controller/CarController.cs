@@ -13,12 +13,18 @@ namespace Assets.Scripts.Controller
             wheelColliders = car.WheenlColliders;
         }
 
-        public void MoveCar(float steering, float acceleration, float breaks)
+        public void Steer(float steering)
         {
             wheelColliders[0].steerAngle = steering * car.MaxSteeringAngle;
             wheelColliders[1].steerAngle = steering * car.MaxSteeringAngle;
 
             car.UpdateWheelPose();
+        }
+
+        public void Accelerate(float acceleration)
+        {
+            foreach (var wheel in wheelColliders)
+                wheel.motorTorque = acceleration * car.MotorForce;
         }
     }
 }

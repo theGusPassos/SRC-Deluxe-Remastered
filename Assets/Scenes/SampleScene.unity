@@ -256,7 +256,9 @@ MonoBehaviour:
   - {fileID: 1898752756}
   - {fileID: 721346849}
   - {fileID: 2137250996}
-  maxSteeringAngle: 20
+  carData:
+    maxSteeringAngle: 35
+    motorForce: 1000
 --- !u!65 &655113070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -504,13 +506,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.23442514, y: -0, z: -0, w: 0.97213423}
-  m_LocalPosition: {x: 0, y: 3.83, z: -10}
+  m_LocalRotation: {x: -0.047997046, y: -0, z: -0, w: 0.99884754}
+  m_LocalPosition: {x: 0.84, y: 0.39, z: -4.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 27.115002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.5020003, y: 0, z: 0}
 --- !u!1 &980366357 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013488684512, guid: 9bfa5f54d41698246b9524640b747550,
