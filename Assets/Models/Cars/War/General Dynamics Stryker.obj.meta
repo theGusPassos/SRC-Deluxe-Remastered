@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 121cdfc18686fa04a9cc6406c8929d19
+timeCreated: 1480262643
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: DrawCall_0762
+    100002: DrawCall_0763
+    100004: DrawCall_0764
+    100006: DrawCall_0765
+    100008: DrawCall_0766
+    100010: DrawCall_0767
+    100012: DrawCall_0768
+    100014: DrawCall_0769
+    100016: DrawCall_0770
+    100018: DrawCall_0771
+    100020: DrawCall_0772
+    100022: DrawCall_0773
+    100024: DrawCall_0774
+    100026: //RootNode
+    400000: DrawCall_0762
+    400002: DrawCall_0763
+    400004: DrawCall_0764
+    400006: DrawCall_0765
+    400008: DrawCall_0766
+    400010: DrawCall_0767
+    400012: DrawCall_0768
+    400014: DrawCall_0769
+    400016: DrawCall_0770
+    400018: DrawCall_0771
+    400020: DrawCall_0772
+    400022: DrawCall_0773
+    400024: DrawCall_0774
+    400026: //RootNode
+    2300000: DrawCall_0762
+    2300002: DrawCall_0763
+    2300004: DrawCall_0764
+    2300006: DrawCall_0765
+    2300008: DrawCall_0766
+    2300010: DrawCall_0767
+    2300012: DrawCall_0768
+    2300014: DrawCall_0769
+    2300016: DrawCall_0770
+    2300018: DrawCall_0771
+    2300020: DrawCall_0772
+    2300022: DrawCall_0773
+    2300024: DrawCall_0774
+    3300000: DrawCall_0762
+    3300002: DrawCall_0763
+    3300004: DrawCall_0764
+    3300006: DrawCall_0765
+    3300008: DrawCall_0766
+    3300010: DrawCall_0767
+    3300012: DrawCall_0768
+    3300014: DrawCall_0769
+    3300016: DrawCall_0770
+    3300018: DrawCall_0771
+    3300020: DrawCall_0772
+    3300022: DrawCall_0773
+    3300024: DrawCall_0774
+    4300000: DrawCall_0762
+    4300002: DrawCall_0763
+    4300004: DrawCall_0764
+    4300006: DrawCall_0765
+    4300008: DrawCall_0766
+    4300010: DrawCall_0767
+    4300012: DrawCall_0768
+    4300014: DrawCall_0769
+    4300016: DrawCall_0770
+    4300018: DrawCall_0771
+    4300020: DrawCall_0772
+    4300022: DrawCall_0773
+    4300024: DrawCall_0774
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
