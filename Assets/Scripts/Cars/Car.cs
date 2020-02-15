@@ -24,7 +24,7 @@ namespace Assets.Scripts.Cars
         private void Awake()
         {
             carRigidbody = GetComponent<Rigidbody>();
-             carRigidbody.centerOfMass = centerOfMass.localPosition;
+            carRigidbody.centerOfMass = centerOfMass.localPosition;
         }
 
         private void FixedUpdate()

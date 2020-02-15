@@ -24,16 +24,14 @@ namespace Assets.Scripts.Controller
 
         public void Accelerate(float acceleration)
         {
-             foreach (var wheel in wheelColliders)
+            foreach (var wheel in wheelColliders.Take(2))
                 wheel.motorTorque = acceleration * car.MotorForce;
-            // wheelColliders[2].motorTorque = acceleration * car.MotorForce;
-            // wheelColliders[3].motorTorque = acceleration * car.MotorForce;
         }
 
         public void Break(float breakForce)
         {
-            foreach (var wheel in wheelColliders)
-                wheel.brakeTorque = breakForce * car.BreakForce;
+            foreach (var wheel in wheelColliders.Take(2))
+                wheel.brakeTorque = -breakForce * car.MotorForce;
         }
     }
 }
