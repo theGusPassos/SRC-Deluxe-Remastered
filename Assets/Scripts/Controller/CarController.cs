@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Cars;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Controller
@@ -23,7 +24,7 @@ namespace Assets.Scripts.Controller
 
         public void Accelerate(float acceleration)
         {
-            foreach (var wheel in wheelColliders)
+            foreach (var wheel in wheelColliders.Take(2))
                 wheel.motorTorque = acceleration * car.MotorForce;
         }
     }

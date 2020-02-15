@@ -2,8 +2,12 @@
 
 namespace Assets.Scripts.Cars
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class Car : MonoBehaviour
     {
+        private Rigidbody carRigidbody;
+        [SerializeField] private Transform centerOfMass;
+
         [Tooltip("front left, front right, back left, back right")]
         [SerializeField] private WheelCollider[] wheelColliders;
 
@@ -15,6 +19,16 @@ namespace Assets.Scripts.Cars
         public WheelCollider[] WheenlColliders { get => wheelColliders; }
         public float MaxSteeringAngle { get => carData.maxSteeringAngle; }
         public float MotorForce { get => carData.motorForce; }
+
+        private void Awake()
+        {
+            carRigidbody = GetComponent<Rigidbody>();
+             carRigidbody.centerOfMass = centerOfMass.localPosition;
+        }
+
+        private void FixedUpdate()
+        {
+        }
 
         public void UpdateWheelPose()
         {
