@@ -19,6 +19,7 @@ namespace Assets.Scripts.Cars
         public WheelCollider[] WheenlColliders { get => wheelColliders; }
         public float MaxSteeringAngle { get => carData.maxSteeringAngle; }
         public float MotorForce { get => carData.motorForce; }
+        public float BreakForce { get => carData.breakForce; }
 
         private void Awake()
         {
@@ -46,5 +47,6 @@ namespace Assets.Scripts.Cars
     {
         public float maxSteeringAngle;
         public float motorForce;
+        public float breakForce;
     }
 }
