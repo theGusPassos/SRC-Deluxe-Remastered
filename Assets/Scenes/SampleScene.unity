@@ -252,6 +252,7 @@ MonoBehaviour:
   - {fileID: 1350481681}
   - {fileID: 1711393743}
   - {fileID: 1719957427}
+  indexOfWheelsWithTorque: 00000000010000000200000003000000
   wheelModels:
   - {fileID: 980366357}
   - {fileID: 1898752756}

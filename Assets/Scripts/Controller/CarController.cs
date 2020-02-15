@@ -11,7 +11,7 @@ namespace Assets.Scripts.Controller
 
         private void Awake()
         {
-            wheelColliders = car.WheenlColliders;
+            wheelColliders = car.WheelsColliders;
         }
 
         public void Steer(float steering)
@@ -24,13 +24,13 @@ namespace Assets.Scripts.Controller
 
         public void Accelerate(float acceleration)
         {
-            foreach (var wheel in wheelColliders.Take(2))
+            foreach (var wheel in car.WheelsWithTorque)
                 wheel.motorTorque = acceleration * car.MotorForce;
         }
 
         public void Break(float breakForce)
         {
-            foreach (var wheel in wheelColliders.Take(2))
+            foreach (var wheel in car.WheelsWithTorque)
                 wheel.brakeTorque = -breakForce * car.MotorForce;
         }
     }
