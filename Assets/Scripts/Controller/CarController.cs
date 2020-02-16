@@ -30,6 +30,9 @@ namespace Assets.Scripts.Controller
                 if (brakeForce > 0 && wheel.hasTorque)
                     wheel.wheelCollider.motorTorque = -brakeForce * car.BreakForce;
 
+                if (wheel.driftParticle != null)
+                    car.ActivateDriftEffect(wheel);
+
                 car.UpdateWheelPose(wheel);
             }
         }

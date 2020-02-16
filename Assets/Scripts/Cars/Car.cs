@@ -32,6 +32,23 @@ namespace Assets.Scripts.Cars
             wheelToUpdate.wheelModel.transform.position = position;
             wheelToUpdate.wheelModel.transform.rotation = quaternion;
         }
+
+        public void ActivateDriftEffect(WheelInfo wheel)
+        {
+            wheel.wheelCollider.GetGroundHit(out WheelHit hit);
+
+            var isEmitting = wheel.driftParticle.isEmitting;
+            var isInDrift = Mathf.Abs(hit.sidewaysSlip) > carData.frictionToShowDriftEffect;
+
+            if (!isEmitting && isInDrift)
+            {
+                wheel.driftParticle.Play();
+            }
+            else if (isEmitting && !isInDrift)
+            {
+                wheel.driftParticle.Stop();
+            }
+        }
     }
 
     [System.Serializable]
@@ -39,6 +56,7 @@ namespace Assets.Scripts.Cars
     {
         public WheelCollider wheelCollider;
         public GameObject wheelModel;
+        public ParticleSystem driftParticle;
         public bool hasTorque;
         public bool hasSteering;
     }
@@ -50,5 +68,6 @@ namespace Assets.Scripts.Cars
         public float motorForce;
         public float breakForce;
         public float frictionInDrift;
+        public float frictionToShowDriftEffect;
     }
 }

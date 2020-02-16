@@ -120,12 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!146 &57240918 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 1350481681, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &143636679
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,12 +211,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!1 &478428508 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000012760139524, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &539621946
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,96 +266,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionSpring.spring
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionSpring.damper
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: indexOfWheelsWithSteering.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: indexOfWheelsWithSteering.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[0].wheelModel
-      value: 
-      objectReference: {fileID: 1896233278}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[0].wheelCollider
-      value: 
-      objectReference: {fileID: 870584855}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[0].hasTorque
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[0].hasSteering
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[1].wheelModel
-      value: 
-      objectReference: {fileID: 478428508}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[1].wheelCollider
-      value: 
-      objectReference: {fileID: 57240918}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[1].hasTorque
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[1].hasSteering
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[2].wheelModel
-      value: 
-      objectReference: {fileID: 1803399110}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[2].wheelCollider
-      value: 
-      objectReference: {fileID: 1695426892}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[3].wheelModel
-      value: 
-      objectReference: {fileID: 612076309}
-    - target: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: wheels.Array.data[3].wheelCollider
-      value: 
-      objectReference: {fileID: 587796727}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
---- !u!146 &587796727 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &612076309 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000011902628436, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &655113068 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550,
@@ -385,12 +285,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013084469264, guid: 5e11ff9dd10e30c4392d9e37e25f59e3,
     type: 3}
   m_PrefabInstance: {fileID: 1135089649}
-  m_PrefabAsset: {fileID: 0}
---- !u!146 &870584855 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 725022695, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &880173796
 GameObject:
@@ -797,18 +691,6 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 1
   m_Enabled: 1
---- !u!146 &1695426892 stripped
-WheelCollider:
-  m_CorrespondingSourceObject: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1803399110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000012653979038, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833797885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +916,7 @@ MonoBehaviour:
     motorForce: 300
     breakForce: 10000
     frictionInDrift: 5
+    frictionToShowDriftEffect: 0
 --- !u!1 &1888678724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,9 +964,3 @@ MonoBehaviour:
   floor: {fileID: 655788697}
   timeToInstantiate: 0.1
   distanceFromWalls: 2
---- !u!1 &1896233278 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013488684512, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
