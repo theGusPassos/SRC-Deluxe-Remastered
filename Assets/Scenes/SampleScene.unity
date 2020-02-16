@@ -266,107 +266,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 54000011211468366, guid: 9bfa5f54d41698246b9524640b747550,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54000011211468366, guid: 9bfa5f54d41698246b9524640b747550,
-        type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149364842, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149364842, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149364842, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 725022695, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 725022695, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 725022695, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 725022695, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_Mass
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350481681, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350481681, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350481681, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350481681, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_Mass
-      value: 2
+    - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
+      propertyPath: m_SuspensionSpring.spring
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711393743, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_Mass
-      value: 2
+      propertyPath: m_SuspensionSpring.damper
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SuspensionDistance
-      value: 0.1
+      propertyPath: m_SuspensionSpring.spring
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_ForwardFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_SidewaysFriction.m_Stiffness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1719957427, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_Mass
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 725022694, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.158
-      objectReference: {fileID: 0}
-    - target: {fileID: 1350481680, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.158
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711393742, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.158
-      objectReference: {fileID: 0}
-    - target: {fileID: 1719957426, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.158
+      propertyPath: m_SuspensionSpring.damper
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
@@ -455,7 +369,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.0092666e-36, y: 1.009742e-28, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
