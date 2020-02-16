@@ -14,11 +14,7 @@ namespace Assets.Scripts.Controller
             float acceleratingInput = CommandInterface.GetAcceleratingInput();
             float breakInput = CommandInterface.GetBreakInput();
 
-            carController.Steer(horizontalInput);
-            carController.Accelerate(acceleratingInput >= 0 ? acceleratingInput : 0);
-
-            if (breakInput > 0)
-                carController.Break(breakInput);
+            carController.MoveCar(horizontalInput, acceleratingInput >= 0 ? acceleratingInput : 0, breakInput);
 
             if (CommandInterface.GetHandBreakInput())
                 carController.HandBreak(horizontalInput);

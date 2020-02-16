@@ -11,57 +11,50 @@ namespace Assets.Scripts.Controller
 
         private void Awake()
         {
-            originalFriction = car.WheelsWithTorque[0].sidewaysFriction;
+            originalFriction = car.Wheels[0].wheelCollider.sidewaysFriction;
 
             frictionInHandBrake = originalFriction;
             frictionInHandBrake.extremumValue = car.FrictionInDrift;
         }
 
-        public void Steer(float steering)
+        public void MoveCar(float steering, float acceleration, float brakeForce)
         {
-            car.WheelsColliders[0].steerAngle = steering * car.MaxSteeringAngle;
-            car.WheelsColliders[1].steerAngle = steering * car.MaxSteeringAngle;
-
-            car.UpdateWheelPose();
-        }
-
-        public void Accelerate(float acceleration)
-        {
-            foreach (var wheel in car.WheelsWithTorque)
+            foreach (var wheel in car.Wheels)
             {
-                wheel.motorTorque = acceleration * car.MotorForce;
-            }
-        }
+                if (wheel.hasSteering) 
+                    wheel.wheelCollider.steerAngle = steering * car.MaxSteeringAngle;
 
-        public void Break(float breakForce)
-        {
-            foreach (var wheel in car.WheelsWithTorque)
-            {
-                wheel.motorTorque = -breakForce * car.MotorForce;
+                if (wheel.hasTorque)
+                    wheel.wheelCollider.motorTorque = acceleration * car.MotorForce;
+
+                if (brakeForce > 0 && wheel.hasTorque)
+                    wheel.wheelCollider.motorTorque = -brakeForce * car.BreakForce;
+
+                car.UpdateWheelPose(wheel);
             }
         }
 
         public void HandBreak(float steering)
         {
-            foreach (var wheel in car.WheelsColliders)
+            foreach (var wheel in car.Wheels)
             {
                 if (steering != 0)
                 {
-                    wheel.sidewaysFriction = frictionInHandBrake;
+                    wheel.wheelCollider.sidewaysFriction = frictionInHandBrake;
                 }
                 else
                 {
-                    wheel.brakeTorque = car.BreakForce;
+                    wheel.wheelCollider.brakeTorque = car.BreakForce;
                 }
             }
         }
 
         public void ReleaseHandBreak()
         {
-            foreach (var wheel in car.WheelsColliders)
+            foreach (var wheel in car.Wheels)
             {
-                wheel.brakeTorque = 0;
-                wheel.sidewaysFriction = originalFriction;
+                wheel.wheelCollider.brakeTorque = 0;
+                wheel.wheelCollider.sidewaysFriction = originalFriction;
             }
         }
     }
