@@ -31,7 +31,7 @@ namespace Assets.Scripts.Controller
         public void Break(float breakForce)
         {
             foreach (var wheel in car.WheelsWithTorque)
-                wheel.brakeTorque = -breakForce * car.MotorForce;
+                wheel.brakeTorque = breakForce * car.BreakForce;
         }
     }
 }
