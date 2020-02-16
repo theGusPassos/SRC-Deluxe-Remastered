@@ -28,6 +28,7 @@ namespace Assets.Scripts.Cars
             carRigidbody.centerOfMass = centerOfMass.localPosition;
 
             SetWheelsWithTorque();
+
         }
 
         private void SetWheelsWithTorque()
