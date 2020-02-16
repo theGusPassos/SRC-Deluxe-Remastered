@@ -143,31 +143,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.01
+      value: 6.550092
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.28
+      value: -2.4906418
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.8
+      value: 11.59698
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.00067281467
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.68033695
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0012959167
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.732898
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_RootOrder
@@ -200,7 +200,7 @@ PrefabInstance:
     - target: {fileID: 54000011211468366, guid: 9bfa5f54d41698246b9524640b747550,
         type: 3}
       propertyPath: m_Mass
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1000012262783760, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_IsActive
@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 1350481681}
   - {fileID: 1711393743}
   - {fileID: 1719957427}
-  indexOfWheelsWithTorque: 00000000010000000200000003000000
+  indexOfWheelsWithTorque: 0200000003000000
   wheelModels:
   - {fileID: 980366357}
   - {fileID: 1898752756}
@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 2137250996}
   carData:
     maxSteeringAngle: 30
-    motorForce: 700
+    motorForce: 40
     breakForce: 10000
 --- !u!4 &655113069 stripped
 Transform:
@@ -431,13 +431,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_SidewaysFriction:
     m_ExtremumSlip: 0.1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_Enabled: 1
 --- !u!1 &963194225
 GameObject:
@@ -742,13 +742,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_SidewaysFriction:
     m_ExtremumSlip: 0.1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_Enabled: 1
 --- !u!1 &1711393741
 GameObject:
@@ -803,13 +803,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_SidewaysFriction:
     m_ExtremumSlip: 0.1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_Enabled: 1
 --- !u!1 &1719957425
 GameObject:
@@ -864,13 +864,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_SidewaysFriction:
     m_ExtremumSlip: 0.1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 7
+    m_Stiffness: 10
   m_Enabled: 1
 --- !u!1 &1898752756 stripped
 GameObject:
