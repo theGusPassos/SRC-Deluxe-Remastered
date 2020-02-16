@@ -25,13 +25,17 @@ namespace Assets.Scripts.Controller
         public void Accelerate(float acceleration)
         {
             foreach (var wheel in car.WheelsWithTorque)
+            {
                 wheel.motorTorque = acceleration * car.MotorForce;
+            }
         }
 
         public void Break(float breakForce)
         {
             foreach (var wheel in car.WheelsWithTorque)
-                wheel.brakeTorque = breakForce * car.BreakForce;
+            {
+                wheel.motorTorque = -breakForce * car.MotorForce;
+            }
         }
     }
 }

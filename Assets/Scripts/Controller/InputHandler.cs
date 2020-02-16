@@ -16,7 +16,9 @@ namespace Assets.Scripts.Controller
 
             carController.Steer(horizontalInput);
             carController.Accelerate(acceleratingInput >= 0 ? acceleratingInput : 0);
-            carController.Break(breakInput >= 0 ? breakInput : 0);
+
+            if (breakInput > 0)
+                carController.Break(breakInput);
         }
     }
 }

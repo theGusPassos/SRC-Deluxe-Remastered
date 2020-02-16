@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 2137250996}
   carData:
     maxSteeringAngle: 30
-    motorForce: 40
+    motorForce: 50
     breakForce: 10000
 --- !u!4 &655113069 stripped
 Transform:
@@ -419,8 +419,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.35
   m_SuspensionSpring:
-    spring: 200
-    damper: 200
+    spring: 500
+    damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
@@ -730,8 +730,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.35
   m_SuspensionSpring:
-    spring: 200
-    damper: 200
+    spring: 500
+    damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
@@ -791,8 +791,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.35
   m_SuspensionSpring:
-    spring: 200
-    damper: 200
+    spring: 500
+    damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
@@ -852,8 +852,8 @@ WheelCollider:
   m_Center: {x: 0, y: 0, z: 0}
   m_Radius: 0.35
   m_SuspensionSpring:
-    spring: 200
-    damper: 200
+    spring: 500
+    damper: 500
     targetPosition: 0.5
   m_SuspensionDistance: 0
   m_ForceAppPointDistance: 0
