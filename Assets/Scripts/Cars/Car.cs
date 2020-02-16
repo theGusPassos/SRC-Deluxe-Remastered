@@ -11,18 +11,16 @@ namespace Assets.Scripts.Cars
         [Tooltip("front left, front right, back left, back right")]
         [SerializeField] private WheelCollider[] wheelColliders;
         [SerializeField] private int[] indexOfWheelsWithTorque;
-        private WheelCollider[] wheelsWithTorque;
-
         [Tooltip("front left, front right, back left, back right")]
         [SerializeField] private GameObject[] wheelModels;
-
         [SerializeField] private CarTunningData carData;
 
         public WheelCollider[] WheelsColliders { get => wheelColliders; }
-        public WheelCollider[] WheelsWithTorque { get => wheelsWithTorque; }
+        public WheelCollider[] WheelsWithTorque { get; private set; }
         public float MaxSteeringAngle { get => carData.maxSteeringAngle; }
         public float MotorForce { get => carData.motorForce; }
         public float BreakForce { get => carData.breakForce; }
+        public float FrictionInDrift { get => carData.frictionInDrift; }
 
         private void Awake()
         {
@@ -34,10 +32,11 @@ namespace Assets.Scripts.Cars
 
         private void SetWheelsWithTorque()
         {
-            wheelsWithTorque = new WheelCollider[indexOfWheelsWithTorque.Length];
-            for (int i = 0; i < wheelsWithTorque.Length; i++)
+            WheelsWithTorque = new WheelCollider[indexOfWheelsWithTorque.Length];
+            for (int i = 0; i < WheelsWithTorque.Length; i++)
             {
-                wheelsWithTorque[i] = wheelColliders[i];
+                int wheel = indexOfWheelsWithTorque[i];
+                WheelsWithTorque[i] = wheelColliders[wheel];
             }
         }
 
@@ -62,5 +61,6 @@ namespace Assets.Scripts.Cars
         public float maxSteeringAngle;
         public float motorForce;
         public float breakForce;
+        public float frictionInDrift;
     }
 }

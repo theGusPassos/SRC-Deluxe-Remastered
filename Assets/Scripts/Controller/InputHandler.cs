@@ -19,6 +19,12 @@ namespace Assets.Scripts.Controller
 
             if (breakInput > 0)
                 carController.Break(breakInput);
+
+            if (CommandInterface.GetHandBreakInput())
+                carController.HandBreak(horizontalInput);
+
+            if (CommandInterface.GetHandBreakInputUp())
+                carController.ReleaseHandBreak();
         }
     }
 }

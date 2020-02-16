@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 1350481681}
   - {fileID: 1711393743}
   - {fileID: 1719957427}
-  indexOfWheelsWithTorque: 0200000003000000
+  indexOfWheelsWithTorque: 0000000001000000
   wheelModels:
   - {fileID: 980366357}
   - {fileID: 1898752756}
@@ -260,7 +260,7 @@ MonoBehaviour:
   - {fileID: 2137250996}
   carData:
     maxSteeringAngle: 30
-    motorForce: 50
+    motorForce: 45
     breakForce: 10000
 --- !u!4 &655113069 stripped
 Transform:
@@ -586,6 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 655113068}
+  extremumValue: 0.5
 --- !u!1001 &1135089649
 PrefabInstance:
   m_ObjectHideFlags: 0
