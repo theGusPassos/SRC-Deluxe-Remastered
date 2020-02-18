@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Cars.Effects;
+using UnityEngine;
 
 namespace Assets.Scripts.Cars
 {
@@ -9,6 +10,9 @@ namespace Assets.Scripts.Cars
         [SerializeField] private Transform centerOfMass;
         [SerializeField] private WheelInfo[] wheels;
         [SerializeField] private CarTunningData carData;
+
+        [SerializeField] private float timeToConsiderDrift;
+        private float timeInDriftSetup = 0;
 
         public WheelInfo[] Wheels { get => wheels; }
         public float MaxSteeringAngle { get => carData.maxSteeringAngle; }
@@ -42,11 +46,22 @@ namespace Assets.Scripts.Cars
 
             if (!isEmitting && isInDrift)
             {
-                wheel.driftParticle.Play();
+                timeInDriftSetup += Time.deltaTime;
+
+                if (timeInDriftSetup > timeToConsiderDrift)
+                {
+                    Debug.Log("started drift");
+                    wheel.driftParticle.Play();
+                    wheel.wheelTrailEffect.StartWheelEffect();
+                }
             }
             else if (isEmitting && !isInDrift)
             {
+                Debug.Log("stopped");
+                timeInDriftSetup = 0;
+
                 wheel.driftParticle.Stop();
+                wheel.wheelTrailEffect.StopWheelEffect();
             }
         }
     }
@@ -57,6 +72,7 @@ namespace Assets.Scripts.Cars
         public WheelCollider wheelCollider;
         public GameObject wheelModel;
         public ParticleSystem driftParticle;
+        public WheelTrailEffect wheelTrailEffect;
         public bool hasTorque;
         public bool hasSteering;
     }

@@ -61,6 +61,51 @@ WheelCollider:
     m_AsymptoteValue: 0.75
     m_Stiffness: 5
   m_Enabled: 1
+--- !u!1 &916513322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 916513323}
+  - component: {fileID: 916513324}
+  m_Layer: 0
+  m_Name: Tire Trail Back Right
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &916513323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916513322}
+  m_LocalRotation: {x: 0, y: 0.9961947, z: -0, w: -0.08715578}
+  m_LocalPosition: {x: 5.397, y: -0.3, z: 2.316}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8474193189393045371}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 190, z: 0}
+--- !u!114 &916513324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916513322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eab0b4cdd83cb048930663cea7cbdf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelTrailPrefab: {fileID: 3882548629632132641, guid: 111ab306eb83db343a14620b25d45089,
+    type: 3}
 --- !u!1 &1149364841
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +353,51 @@ Transform:
   m_Father: {fileID: 4000013551092620}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2102091546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2102091547}
+  - component: {fileID: 2102091549}
+  m_Layer: 0
+  m_Name: Tire Trail Back Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2102091547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102091546}
+  m_LocalRotation: {x: 0, y: 0.9961947, z: -0, w: -0.08715578}
+  m_LocalPosition: {x: 3.64, y: -0.3, z: 2.44}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_Children: []
+  m_Father: {fileID: 8474193189393045371}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 190, z: 0}
+--- !u!114 &2102091549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102091546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eab0b4cdd83cb048930663cea7cbdf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelTrailPrefab: {fileID: 3882548629632132641, guid: 111ab306eb83db343a14620b25d45089,
+    type: 3}
 --- !u!1 &1000010497575598
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,21 +1017,25 @@ MonoBehaviour:
   - wheelCollider: {fileID: 725022695}
     wheelModel: {fileID: 1000013488684512}
     driftParticle: {fileID: 0}
+    wheelTrailEffect: {fileID: 0}
     hasTorque: 1
     hasSteering: 1
   - wheelCollider: {fileID: 1350481681}
     wheelModel: {fileID: 1000012760139524}
     driftParticle: {fileID: 0}
+    wheelTrailEffect: {fileID: 0}
     hasTorque: 1
     hasSteering: 1
   - wheelCollider: {fileID: 1719957427}
     wheelModel: {fileID: 1000012653979038}
     driftParticle: {fileID: 4996703581224474722}
+    wheelTrailEffect: {fileID: 916513324}
     hasTorque: 0
     hasSteering: 0
   - wheelCollider: {fileID: 1711393743}
     wheelModel: {fileID: 1000011902628436}
     driftParticle: {fileID: 6642018371527836603}
+    wheelTrailEffect: {fileID: 2102091549}
     hasTorque: 0
     hasSteering: 0
   carData:
@@ -950,6 +1044,7 @@ MonoBehaviour:
     breakForce: 10000
     frictionInDrift: 0.2
     frictionToShowDriftEffect: 0.1
+  timeToConsiderDrift: 0.3
 --- !u!1 &1000013488684512
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,6 +1152,8 @@ Transform:
   m_Children:
   - {fileID: 4996703581242826018}
   - {fileID: 6642018371546187515}
+  - {fileID: 2102091547}
+  - {fileID: 916513323}
   m_Father: {fileID: 4000013551092620}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1265,15 +1362,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b3b9efd81f1dd478708deff6cbc6e9, type: 3}
---- !u!198 &4996703581224474722 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3460142062319080953}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4996703581242826018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8454170956943591643, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3460142062319080953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4996703581224474722 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
     type: 3}
   m_PrefabInstance: {fileID: 3460142062319080953}
   m_PrefabAsset: {fileID: 0}
