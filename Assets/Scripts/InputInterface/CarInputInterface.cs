@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Controller
+namespace Assets.Scripts.InputInterface
 {
-    public static class CommandInterface
+    public static class CarInputInterface
     {
         public static float GetHorizontalInput() => Input.GetAxisRaw("Horizontal");
         public static float GetVerticalInput() => Input.GetAxisRaw("Vertical");

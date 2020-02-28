@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.InputInterface;
+using UnityEngine;
 
 namespace Assets.Scripts.Controller
 {
@@ -8,18 +9,18 @@ namespace Assets.Scripts.Controller
 
         private void Update()
         {
-            float horizontalInput = CommandInterface.GetHorizontalInput();
-            float verticalInput = CommandInterface.GetVerticalInput();
+            float horizontalInput = CarInputInterface.GetHorizontalInput();
+            float verticalInput = CarInputInterface.GetVerticalInput();
 
-            float acceleratingInput = CommandInterface.GetAcceleratingInput();
-            float breakInput = CommandInterface.GetBreakInput();
+            float acceleratingInput = CarInputInterface.GetAcceleratingInput();
+            float breakInput = CarInputInterface.GetBreakInput();
 
             carController.MoveCar(horizontalInput, acceleratingInput >= 0 ? acceleratingInput : 0, breakInput);
 
-            if (CommandInterface.GetHandBreakInput())
+            if (CarInputInterface.GetHandBreakInput())
                 carController.HandBreak(horizontalInput);
 
-            if (CommandInterface.GetHandBreakInputUp())
+            if (CarInputInterface.GetHandBreakInputUp())
                 carController.ReleaseHandBreak();
         }
     }
