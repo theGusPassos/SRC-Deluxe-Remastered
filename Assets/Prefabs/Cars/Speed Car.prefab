@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 54000011211468366}
   - component: {fileID: 655113070}
   - component: {fileID: 655113068}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Speed Car
   m_TagString: car
   m_Icon: {fileID: 0}
@@ -1169,6 +1169,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tire Smoke Back Left
       objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.x.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.x.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.y.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.y.scalar
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8454170956943591643, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1239,26 +1259,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.0000001
       objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.x.minMaxState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.x.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.y.minMaxState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.y.scalar
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b3b9efd81f1dd478708deff6cbc6e9, type: 3}
 --- !u!4 &6642018371546187515 stripped
@@ -1284,6 +1284,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tire Smoke Back Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.x.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.x.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.y.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
+        type: 3}
+      propertyPath: RotationBySpeedModule.y.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8454170956943591643, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
         type: 3}
@@ -1339,26 +1359,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.x.minMaxState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.x.scalar
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.y.minMaxState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8454170956928388507, guid: d9b3b9efd81f1dd478708deff6cbc6e9,
-        type: 3}
-      propertyPath: RotationBySpeedModule.y.scalar
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b3b9efd81f1dd478708deff6cbc6e9, type: 3}
