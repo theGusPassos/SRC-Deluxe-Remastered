@@ -50,14 +50,12 @@ namespace Assets.Scripts.Cars
 
                 if (timeInDriftSetup > timeToConsiderDrift)
                 {
-                    Debug.Log("started drift");
                     wheel.driftParticle.Play();
                     wheel.wheelTrailEffect.StartWheelEffect();
                 }
             }
             else if (isEmitting && !isInDrift)
             {
-                Debug.Log("stopped");
                 timeInDriftSetup = 0;
 
                 wheel.driftParticle.Stop();
