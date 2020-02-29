@@ -948,6 +948,8 @@ GameObject:
   - component: {fileID: 54000011211468366}
   - component: {fileID: 655113070}
   - component: {fileID: 655113068}
+  - component: {fileID: 216763776}
+  - component: {fileID: 216763773}
   m_Layer: 10
   m_Name: Speed Car
   m_TagString: car
@@ -1045,6 +1047,33 @@ MonoBehaviour:
     frictionInDrift: 0.2
     frictionToShowDriftEffect: 0.1
   timeToConsiderDrift: 0.3
+--- !u!114 &216763776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012922461890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3250a5bf8bc25d542bc4ccb86cdc875f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &216763773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012922461890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6668704b7971264b881fbc5b3e60081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPointsUiPrefab: {fileID: 2252839047210234967, guid: f3e959c71a46f874b934da5855e9ec45,
+    type: 3}
+  maxHealthPoints: 100
 --- !u!1 &1000013488684512
 GameObject:
   m_ObjectHideFlags: 0
