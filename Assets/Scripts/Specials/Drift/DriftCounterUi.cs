@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Utilities;
+﻿using Assets.Scripts.Systems;
+using Assets.Scripts.Utilities;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,10 @@ namespace Assets.Scripts.Specials.Drift
     {
         [SerializeField] private TextMeshProUGUI driftCounter;
         [SerializeField] private TextMeshProUGUI driftMultiplier;
+        [SerializeField] private Vector3 distanceFromCar;
+
+        [SerializeField] private GameObject driftCounterFloaterPrefab;
+        private ObjectPool<DriftCounterFloater> driftCounterFloaterPool;
 
         private ObjectFollowerFromCanvas objectFollower;
 
@@ -17,16 +22,48 @@ namespace Assets.Scripts.Specials.Drift
             objectFollower = GetComponent<ObjectFollowerFromCanvas>();
         }
 
-        public void SetCarToFollow(Transform car) => objectFollower.SetObjectToFollow(car);
+        private void Start()
+        {
+            driftCounterFloaterPool = new ObjectPool<DriftCounterFloater>(
+                DriftConfiguration.instance.DriftCounterFloaterPoolSize,
+                driftCounterFloaterPrefab);
+        }
+
+        public void SetCarToFollow(Transform car) 
+        {
+            objectFollower.SetDistanceFromTarget(distanceFromCar);
+            objectFollower.SetObjectToFollow(car); 
+        }
+
+        public void StartUi()
+        {
+            driftCounter.enabled = true;
+            driftMultiplier.enabled = true;
+            driftMultiplier.text = "";
+        }
 
         public void SetCurrentPointsInDrift(float currentPointsInDrift)
         {
-            driftCounter.text = ((int)currentPointsInDrift).ToString();
+            driftCounter.text = currentPointsInDrift.ToString("n0");
         }
 
         public void SetMultiplier(int multiplier)
         {
             driftMultiplier.text = $"x {multiplier}";
+        }
+
+        public void ResetUi()
+        {
+            driftCounter.enabled = false;
+            driftMultiplier.enabled = false;
+
+            CreateScoreFloater();
+        }
+
+        public void CreateScoreFloater()
+        {
+            var driftCounterFloater = driftCounterFloaterPool.PlaceObject(transform.position, transform.parent);
+            driftCounterFloater.SetFloater(driftCounter.text, driftMultiplier.text);
         }
     }
 }

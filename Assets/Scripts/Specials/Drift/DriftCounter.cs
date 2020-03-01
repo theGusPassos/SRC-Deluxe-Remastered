@@ -27,7 +27,8 @@ namespace Assets.Scripts.Specials.Drift
 
         private void OnDestroy()
         {
-            driftEvent.RemoveListener(this);
+            if (driftEvent != null)
+                driftEvent.RemoveListener(this);
         }
 
         private void SetupDriftCounterUi()
@@ -69,10 +70,7 @@ namespace Assets.Scripts.Specials.Drift
         {
             if (e == DriftEvent.STARTED_DRIFT)
             {
-                currentPointsInDrift = 0;
-                timeInDrift = 0;
-                currentMultiplier = 1;
-                isInDrift = true;
+                StartDrifting();   
             }
             else if (e == DriftEvent.ENDED_DRIFT)
             {
@@ -81,9 +79,19 @@ namespace Assets.Scripts.Specials.Drift
             }
         }
 
+        private void StartDrifting()
+        {
+            currentPointsInDrift = 0;
+            timeInDrift = 0;
+            currentMultiplier = 1;
+            isInDrift = true;
+            driftCounterUi.StartUi();
+        }
+
         private void CalculateEndDrift()
         {
             maxDriftPointCount += currentPointsInDrift;
+            driftCounterUi.ResetUi();
         }
     }
 
