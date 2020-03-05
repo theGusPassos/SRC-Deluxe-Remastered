@@ -2,33 +2,33 @@
 {
     public class OptionsInMenu
     {
-        private int optionCount;
-        private int currentOption;
+        private readonly int optionCount;
 
         public OptionsInMenu(int optionCount, int currentOption = 0)
         {
             this.optionCount = optionCount;
-            this.currentOption = currentOption;
+            this.CurrentOption = currentOption;
         }
 
-        public int GetCurrentOption() => currentOption;
-
-        public int GetNextOption()
+        public int CurrentOption { get; private set; }
+        public int NextOption
         {
-            currentOption++;
-            if (currentOption >= optionCount)
-                currentOption = 0;
-
-            return currentOption;
+            get
+            {
+                CurrentOption++;
+                if (CurrentOption >= optionCount) CurrentOption = 0;
+                return CurrentOption;
+            }
         }
 
-        public int GetPreviousOption()
+        public int PreviousOption
         {
-            currentOption--;
-            if (currentOption < 0)
-                currentOption = optionCount - 1;
-
-            return currentOption;
+            get
+            {
+                CurrentOption--;
+                if (CurrentOption < 0) CurrentOption = optionCount - 1;
+                return CurrentOption;
+            }
         }
     }
 }

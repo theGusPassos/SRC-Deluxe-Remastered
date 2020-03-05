@@ -16,7 +16,7 @@ namespace Assets.Scripts.UI.Menu
         private void Awake()
         {
             options = new OptionsInMenu(optionsText.Length);
-            optionsText[options.GetCurrentOption()].color = selectedOptionColor;
+            optionsText[options.CurrentOption].color = selectedOptionColor;
         }
 
         private void Update()
@@ -27,10 +27,10 @@ namespace Assets.Scripts.UI.Menu
                 && Mathf.Abs(input) > InputConfiguration.instance.AxisSensibilityInMeny)
             {
                 if (input > 0)
-                    ChangeSelectedOption(options.GetCurrentOption(), options.GetNextOption());
+                    ChangeSelectedOption(options.CurrentOption, options.NextOption);
 
                 else if (input < 0)
-                    ChangeSelectedOption(options.GetCurrentOption(), options.GetPreviousOption());
+                    ChangeSelectedOption(options.CurrentOption, options.PreviousOption);
 
                 inputDown = true;
             }
