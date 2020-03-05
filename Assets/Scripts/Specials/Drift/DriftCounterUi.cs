@@ -44,7 +44,7 @@ namespace Assets.Scripts.Specials.Drift
 
         public void SetCurrentPointsInDrift(float currentPointsInDrift)
         {
-            driftCounter.text = currentPointsInDrift.ToString("n0");
+            driftCounter.text = currentPointsInDrift.ToString("N0");
         }
 
         public void SetMultiplier(int multiplier)

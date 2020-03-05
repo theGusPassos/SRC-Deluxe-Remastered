@@ -43,7 +43,8 @@ namespace Assets.Scripts.Specials.Drift
             if (isInDrift)
             {
                 timeInDrift += Time.deltaTime;
-                currentPointsInDrift = currentMultiplier 
+                currentPointsInDrift = 
+                    currentMultiplier 
                     * DriftConfiguration.instance.DriftPointsByTime 
                     * Time.deltaTime;
 
