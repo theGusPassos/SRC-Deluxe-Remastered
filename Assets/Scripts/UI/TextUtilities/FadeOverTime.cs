@@ -9,16 +9,24 @@ namespace Assets.Scripts.UI.TextUtilities
         private TextMeshProUGUI textMesh;
         [SerializeField] private float fadeSpeed;
         private Color fadeColor;
+        private Color originalColor;
 
         private void Awake()
         {
             textMesh = GetComponent<TextMeshProUGUI>();
             fadeColor = new Color(0, 0, 0, fadeSpeed);
+            originalColor = textMesh.color;
         }
 
         private void Update()
         {
-            textMesh.color -= fadeColor * Time.deltaTime;
+            if (textMesh.color.a > 0)
+                textMesh.color -= fadeColor * Time.deltaTime;
+        }
+
+        private void OnDisable()
+        {
+            textMesh.color = originalColor;
         }
     }
 }

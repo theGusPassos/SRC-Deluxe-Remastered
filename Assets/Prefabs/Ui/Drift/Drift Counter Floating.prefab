@@ -432,4 +432,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be3f1b7845a4d8449a9c45bbcd0c2df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDisable: 5
+  timeToDisable: 3

@@ -6,6 +6,17 @@ namespace Assets.Scripts.Utilities.Movers
     {
         [SerializeField] private Vector3 scaleGrowDirection;
         [SerializeField] private float growSpeed;
+        private Vector3 originalScale;
+
+        private void Awake()
+        {
+            originalScale = transform.localScale;
+        }
+
+        private void OnDisable()
+        {
+            transform.localScale = originalScale;
+        }
 
         private void Update()
         {
