@@ -853,9 +853,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011828801476}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -4.7279, y: 3.6, z: -40.1}
-  m_LocalScale: {x: 1.3960812, y: 10.990242, z: 2.9614458}
+  m_LocalScale: {x: 0.5352994, y: 4.2139883, z: 1.1355072}
   m_Children:
   - {fileID: 4000010961670350}
   - {fileID: 4000011015738740}
@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 33000011120509412}
   - component: {fileID: 65000011105953080}
   - component: {fileID: 23000010454620870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: floor
   m_Icon: {fileID: 0}
@@ -1796,7 +1796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4000012667141048
 Transform:
   m_ObjectHideFlags: 0

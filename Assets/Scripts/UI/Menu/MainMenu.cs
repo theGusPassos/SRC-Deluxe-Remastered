@@ -21,6 +21,11 @@ namespace Assets.Scripts.UI.Menu
 
         private void Update()
         {
+            ChangeOption();
+        }
+
+        private void ChangeOption()
+        {
             var input = MenuInputInterface.GetVerticalInput();
 
             if (!inputDown 
@@ -28,7 +33,6 @@ namespace Assets.Scripts.UI.Menu
             {
                 if (input > 0)
                     ChangeSelectedOption(options.CurrentOption, options.NextOption);
-
                 else if (input < 0)
                     ChangeSelectedOption(options.CurrentOption, options.PreviousOption);
 
@@ -36,6 +40,11 @@ namespace Assets.Scripts.UI.Menu
             }
 
             if (input == 0) inputDown = false;
+        }
+
+        private void SelectOption()
+        {
+            
         }
 
         private void ChangeSelectedOption(int unselected, int selected)

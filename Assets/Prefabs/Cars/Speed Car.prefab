@@ -950,6 +950,7 @@ GameObject:
   - component: {fileID: 655113068}
   - component: {fileID: 216763776}
   - component: {fileID: 216763773}
+  - component: {fileID: 292108871}
   m_Layer: 10
   m_Name: Speed Car
   m_TagString: car
@@ -1046,7 +1047,7 @@ MonoBehaviour:
     breakForce: 10000
     frictionInDrift: 0.2
     frictionToShowDriftEffect: 0.1
-  timeToConsiderDrift: 0.3
+  timeToConsiderDrift: 0.4
 --- !u!114 &216763776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1074,6 +1075,20 @@ MonoBehaviour:
   healthPointsUiPrefab: {fileID: 2252839047210234967, guid: f3e959c71a46f874b934da5855e9ec45,
     type: 3}
   maxHealthPoints: 100
+--- !u!114 &292108871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012922461890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04a40f5dc1d34a4791b651908473101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driftCounterUiPrefab: {fileID: 8929224806299583366, guid: 61ae3f83349cf9e46a6c4906af67fbb9,
+    type: 3}
 --- !u!1 &1000013488684512
 GameObject:
   m_ObjectHideFlags: 0
