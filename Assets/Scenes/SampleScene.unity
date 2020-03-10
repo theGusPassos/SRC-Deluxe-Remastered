@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  positionToGo: {x: 0, y: 0, z: 0}
 --- !u!1 &195938207
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +574,7 @@ GameObject:
   - component: {fileID: 388380244}
   - component: {fileID: 388380246}
   - component: {fileID: 388380245}
+  - component: {fileID: 388380247}
   m_Layer: 5
   m_Name: Current Option Selected
   m_TagString: Untagged
@@ -637,6 +639,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388380243}
   m_CullTransparentMesh: 0
+--- !u!114 &388380247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388380243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1dce5b31b5883846840db9b46d2f732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &407763515
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  positionToGo: {x: 0, y: 0, z: 0}
 --- !u!1 &727501105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,6 +3424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d0a45b6803457419ce3f65372ab140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionMover: {fileID: 388380247}
 --- !u!114 &1730829899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4684,6 +4700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  positionToGo: {x: 0, y: 0, z: 0}
 --- !u!1 &2067162184
 GameObject:
   m_ObjectHideFlags: 0

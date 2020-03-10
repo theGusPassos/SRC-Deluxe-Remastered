@@ -9,6 +9,7 @@ namespace Assets.Scripts.UI.Menu
         private bool inputDown = false;
 
         private MenuMover menuMover;
+        [SerializeField] private OptionMover optionMover;
 
         private void Awake()
         {
@@ -19,11 +20,11 @@ namespace Assets.Scripts.UI.Menu
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
-                menuMover.GoToNextMenu();
+                optionMover.MoveDown();
             }
             else if(Input.GetKeyDown(KeyCode.P))
             {
-                menuMover.GoToPreviousMenu();
+                optionMover.MoveUp();
             }
         }
 
