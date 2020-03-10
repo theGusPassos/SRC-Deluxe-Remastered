@@ -1,27 +1,30 @@
 ﻿using Assets.Scripts.InputInterface;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Menu
 {
+    [RequireComponent(typeof(MenuMover))]
     public class MainMenu : MonoBehaviour
     {
-        [SerializeField] private Text[] optionsText;
-        [SerializeField] private Color selectedOptionColor;
-        [SerializeField] private Color notSelectedOptionColor;
-        private OptionsInMenu options;
-
         private bool inputDown = false;
+
+        private MenuMover menuMover;
 
         private void Awake()
         {
-            options = new OptionsInMenu(optionsText.Length);
-            optionsText[options.CurrentOption].color = selectedOptionColor;
+            menuMover = GetComponent<MenuMover>();
         }
 
         private void Update()
         {
-            ChangeOption();
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                menuMover.GoToNextMenu();
+            }
+            else if(Input.GetKeyDown(KeyCode.P))
+            {
+                menuMover.GoToPreviousMenu();
+            }
         }
 
         private void ChangeOption()
@@ -31,11 +34,6 @@ namespace Assets.Scripts.UI.Menu
             if (!inputDown 
                 && Mathf.Abs(input) > InputConfiguration.instance.AxisSensibilityInMeny)
             {
-                if (input > 0)
-                    ChangeSelectedOption(options.CurrentOption, options.NextOption);
-                else if (input < 0)
-                    ChangeSelectedOption(options.CurrentOption, options.PreviousOption);
-
                 inputDown = true;
             }
 
@@ -45,12 +43,6 @@ namespace Assets.Scripts.UI.Menu
         private void SelectOption()
         {
             
-        }
-
-        private void ChangeSelectedOption(int unselected, int selected)
-        {
-            optionsText[selected].color = selectedOptionColor;
-            optionsText[unselected].color = notSelectedOptionColor;
         }
     }
 }
