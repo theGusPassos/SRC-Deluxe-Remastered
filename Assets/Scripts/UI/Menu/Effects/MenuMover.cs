@@ -1,7 +1,7 @@
 ﻿using Assets.Scripts.Utilities.Movers;
 using UnityEngine;
 
-namespace Assets.Scripts.UI.Menu
+namespace Assets.Scripts.UI.Menu.Effects
 {
     public class MenuMover : MonoBehaviour
     {
