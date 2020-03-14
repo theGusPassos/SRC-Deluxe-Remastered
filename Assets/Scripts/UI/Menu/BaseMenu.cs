@@ -58,15 +58,15 @@ namespace Assets.Scripts.UI.Menu
 
         private void GoToPreviousOption()
         {
-            if (CurrentOption - 1 < 0)
-            {
-                CurrentOption = optionCount;
-                optionMover.MoveToLast(optionCount);
-            }
-            else
+            if (CurrentOption - 1 >= 0)
             {
                 CurrentOption--;
                 optionMover.MoveUp();
+            }
+            else
+            {
+                CurrentOption = optionCount - 1;
+                optionMover.MoveToLast(optionCount);
             }
         }
 

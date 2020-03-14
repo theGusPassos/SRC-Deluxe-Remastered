@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Scripts.UI.Menu.Effects
 {
@@ -15,18 +14,18 @@ namespace Assets.Scripts.UI.Menu.Effects
             firstPosition = transform.localPosition;
 
             rectTransform = GetComponent<RectTransform>();
-            var yMoveRate = rectTransform.rect.height / 2;
+            var yMoveRate = rectTransform.rect.height;
             moveRate = new Vector3(0, yMoveRate);
         }
 
         public void MoveDown()
         {
-            transform.position -= moveRate;
+            transform.localPosition -= moveRate;
         }
 
         public void MoveUp()
         {
-            transform.position += moveRate;
+            transform.localPosition += moveRate;
         }
 
         public void MoveToFirst()
@@ -36,7 +35,7 @@ namespace Assets.Scripts.UI.Menu.Effects
 
         public void MoveToLast(int nOptions)
         {
-            transform.localPosition = firstPosition - moveRate;
+            transform.localPosition = firstPosition - moveRate * (nOptions - 1);
         }
     }
 }
