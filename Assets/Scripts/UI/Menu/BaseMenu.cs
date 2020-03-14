@@ -6,21 +6,34 @@ namespace Assets.Scripts.UI.Menu
 {
     public class BaseMenu : MonoBehaviour, IMenu
     {
+        protected MenuManager menuManager;
         private bool inputDown = false;
         [SerializeField] private int optionCount;
+        private CircularSum circularSum;
         private OptionMover optionMover;
 
         protected int CurrentOption { get; private set; }
+
+        [SerializeField] private bool startAsActive;
         public bool IsActive { get; set; }
 
         private void Awake()
         {
+            menuManager = GetComponentInParent<MenuManager>();
             optionMover = GetComponentInChildren<OptionMover>();
+
+            circularSum = new CircularSum(optionCount - 1);
+
+            IsActive = startAsActive;
         }
 
         protected virtual void Update()
         {
-            ChangeOption();
+            if (!IsActive) return;
+
+            if (optionCount > 1)
+                ChangeOption();
+
             SelectOption();
         }
 
@@ -44,15 +57,10 @@ namespace Assets.Scripts.UI.Menu
 
         private void GoToNextOption()
         {
-            if (CurrentOption + 1 < optionCount)
+            if (CurrentOption < optionCount - 1)
             {
                 CurrentOption++;
                 optionMover.MoveDown();
-            }
-            else
-            {
-                CurrentOption = 0;
-                optionMover.MoveToFirst();
             }
         }
 
@@ -63,19 +71,16 @@ namespace Assets.Scripts.UI.Menu
                 CurrentOption--;
                 optionMover.MoveUp();
             }
-            else
-            {
-                CurrentOption = optionCount - 1;
-                optionMover.MoveToLast(optionCount);
-            }
         }
 
         private void SelectOption()
         {
             if (MenuInputInterface.GetMenuConfirmationInput())
             {
-                // OnOptionSelected();
+                OnOptionSelected();
             }
         }
+
+        protected virtual void OnOptionSelected() { }
     }
 }

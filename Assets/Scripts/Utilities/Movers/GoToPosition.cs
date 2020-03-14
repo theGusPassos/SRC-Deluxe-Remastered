@@ -6,10 +6,11 @@ namespace Assets.Scripts.Utilities.Movers
     {
         [SerializeField] private float speed;
         [SerializeField] private Vector3 positionToGo;
-        private bool isSet = false;
+        [SerializeField] private bool isSet = false;
 
         public void SetPositionToGo(Vector3 positionToGo)
         {
+            var thisobj = gameObject.name;
             this.isSet = true;
             this.positionToGo = positionToGo;
         }
