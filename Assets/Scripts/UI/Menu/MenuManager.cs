@@ -8,20 +8,17 @@ namespace Assets.Scripts.UI.Menu
     {
         private MenuMover menuMover;
         private int currentMenu = 1;
-        private IMenu[] menus;
+        private BaseMenu[] menus;
 
         private void Awake()
         {
             menuMover = GetComponent<MenuMover>();
-            menus = GetComponentsInChildren<IMenu>();
+            menus = GetComponentsInChildren<BaseMenu>();
         }
 
-        public void Update()
+        private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.N))
-                GoToNextMenu();
-            else if (Input.GetKeyDown(KeyCode.M))
-                GoToPreviousMenu();
+            menus[currentMenu].Execute();
         }
 
         public void GoToNextMenu()
@@ -29,10 +26,7 @@ namespace Assets.Scripts.UI.Menu
             if (currentMenu + 1 >= menus.Length)
                 return;
 
-            menus[currentMenu].IsActive = false;
             currentMenu++;
-            menus[currentMenu].IsActive = true;
-
             menuMover.GoToNextMenu();
         }
 
@@ -41,10 +35,7 @@ namespace Assets.Scripts.UI.Menu
             if (currentMenu - 1 < 0)
                 return;
 
-            menus[currentMenu].IsActive = false;
             currentMenu--;
-            menus[currentMenu].IsActive = true;
-
             menuMover.GoToPreviousMenu();
         }
     }

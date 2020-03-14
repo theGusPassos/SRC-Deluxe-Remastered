@@ -4,33 +4,24 @@ using UnityEngine;
 
 namespace Assets.Scripts.UI.Menu
 {
-    public class BaseMenu : MonoBehaviour, IMenu
+    public class BaseMenu : MonoBehaviour
     {
-        protected MenuManager menuManager;
-        private bool inputDown = false;
-        [SerializeField] private int optionCount;
-        private CircularSum circularSum;
-        private OptionMover optionMover;
-
         protected int CurrentOption { get; private set; }
 
-        [SerializeField] private bool startAsActive;
-        public bool IsActive { get; set; }
+        private bool inputDown = false;
+
+        protected MenuManager menuManager;
+        private OptionMover optionMover;
+        [SerializeField] private int optionCount;
 
         private void Awake()
         {
             menuManager = GetComponentInParent<MenuManager>();
             optionMover = GetComponentInChildren<OptionMover>();
-
-            circularSum = new CircularSum(optionCount - 1);
-
-            IsActive = startAsActive;
         }
 
-        protected virtual void Update()
+        public virtual void Execute()
         {
-            if (!IsActive) return;
-
             if (optionCount > 1)
                 ChangeOption();
 

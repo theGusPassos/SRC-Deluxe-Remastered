@@ -2,6 +2,7 @@
 {
     public interface IMenu 
     {
-        bool IsActive { get; set; }
+        void SetActive();
+        void SetInactive();
     }
 }
