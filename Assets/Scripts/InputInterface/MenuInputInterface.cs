@@ -6,6 +6,6 @@ namespace Assets.Scripts.InputInterface
     {
         public static bool GetStartInput() => Input.GetButtonDown("start");
         public static float GetVerticalInput() => Input.GetAxisRaw("Vertical");
-        public static bool GetMenuConfirmationInput() => Input.GetButtonDown("x");
+        public static bool GetMenuConfirmationInput() => Input.GetButtonDown("x") || Input.GetKeyDown(KeyCode.Return);
     }
 }
