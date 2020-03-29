@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Cars;
-using Assets.Scripts.InputInterface;
 using UnityEngine;
 
 namespace Assets.Scripts.UI.Menu.CarSelection
@@ -28,11 +27,16 @@ namespace Assets.Scripts.UI.Menu.CarSelection
             SetDefaultCarForPlayers();
         }
 
+        private void Update()
+        {
+            GetPlayersEnteringGame();
+        }
+
         private void GetPlayersEnteringGame()
         {
             for (int i = 2; i < playersPlaying.Length + 1; i++)
             {
-                if (MenuInputInterface.GetMenuConfirmationInput(i.ToString()))
+                if (Input.GetKeyDown(KeyCode.Space))
                 {
                     SetPlayerEnteredGame(i - 1);
                 }
@@ -42,6 +46,7 @@ namespace Assets.Scripts.UI.Menu.CarSelection
         private void SetPlayerEnteredGame(int player)
         {
             playersPlaying[player] = true;
+            carSelectionUi.ActiveNewPlayer(player);
         }
 
         private void GetChangedCarInput()
