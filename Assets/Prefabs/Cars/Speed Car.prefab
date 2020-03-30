@@ -1087,6 +1087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04a40f5dc1d34a4791b651908473101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  driftCanvas: {fileID: 0}
   driftCounterUiPrefab: {fileID: 8929224806299583366, guid: 61ae3f83349cf9e46a6c4906af67fbb9,
     type: 3}
 --- !u!1 &1000013488684512

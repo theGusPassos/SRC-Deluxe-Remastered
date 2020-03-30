@@ -18,6 +18,17 @@ namespace Assets.Scripts.Specials.Drift
         private float currentPointsInDrift;
         private int currentMultiplier = 1;
 
+        private static Transform driftTransform;
+        private static Transform DriftTransform
+        {
+            get
+            {
+                if (driftTransform == null)
+                    driftTransform = GameObject.Find("Drift Canvas").transform;
+                return driftTransform;
+            }
+        }
+
         private void Awake()
         {
             var driftEvent = GetComponent<Car>();
@@ -33,7 +44,7 @@ namespace Assets.Scripts.Specials.Drift
 
         private void SetupDriftCounterUi()
         {
-            var driftCounterObj = Instantiate(driftCounterUiPrefab, GameObject.Find("Canvas").transform);
+            var driftCounterObj = Instantiate(driftCounterUiPrefab, DriftTransform);
             driftCounterUi = driftCounterObj.GetComponent<DriftCounterUi>();
             driftCounterUi.SetCarToFollow(transform);
         }
@@ -43,9 +54,9 @@ namespace Assets.Scripts.Specials.Drift
             if (isInDrift)
             {
                 timeInDrift += Time.deltaTime;
-                currentPointsInDrift = 
-                    currentMultiplier 
-                    * DriftConfiguration.instance.DriftPointsByTime 
+                currentPointsInDrift =
+                    currentMultiplier
+                    * DriftConfiguration.instance.DriftPointsByTime
                     * Time.deltaTime;
 
                 driftCounterUi.SetCurrentPointsInDrift(currentPointsInDrift);
@@ -57,11 +68,11 @@ namespace Assets.Scripts.Specials.Drift
                 }
             }
         }
-        
+
         public bool TimeIsGreaterThanMultiplier(int multiplier, float time)
         {
             var driftMultiplierMinTime = DriftConfiguration.instance.DriftMultiplierMinTime;
-            if (multiplier - 1 >=  driftMultiplierMinTime.Length)
+            if (multiplier - 1 >= driftMultiplierMinTime.Length)
                 return false;
 
             return time > driftMultiplierMinTime[multiplier - 1];
@@ -71,7 +82,7 @@ namespace Assets.Scripts.Specials.Drift
         {
             if (e == DriftEvent.STARTED_DRIFT)
             {
-                StartDrifting();   
+                StartDrifting();
             }
             else if (e == DriftEvent.ENDED_DRIFT)
             {
