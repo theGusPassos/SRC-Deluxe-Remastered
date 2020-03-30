@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Cars;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.UI.Menu.CarSelection
@@ -10,7 +11,10 @@ namespace Assets.Scripts.UI.Menu.CarSelection
         [SerializeField] private AvailableCars availableCars;
 
         private bool[] playersPlaying = { true, false, false, false };
+        private bool[] playersReady = { false, false, false, false };
         private int[] selectedCarByPlayer = new int[4];
+
+        private bool started = false;
 
         private void SetDefaultCarForPlayers()
         {
@@ -29,31 +33,55 @@ namespace Assets.Scripts.UI.Menu.CarSelection
 
         private void Update()
         {
-            GetPlayersEnteringGame();
+            if (started) return;
+            GetPlayersEnteringGameInput();
+            GetChangedCarInput();
+            GetPlayerReadyInput();
         }
 
-        private void GetPlayersEnteringGame()
+        private void GetPlayersEnteringGameInput()
         {
-            for (int i = 2; i < playersPlaying.Length + 1; i++)
+            for (int i = 1; i < playersPlaying.Length; i++)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space) && !playersPlaying[i])
                 {
-                    SetPlayerEnteredGame(i - 1);
+                    playersPlaying[i] = true;
+                    carSelectionUi.ActiveNewPlayer(i);
                 }
             }
-        }
-
-        private void SetPlayerEnteredGame(int player)
-        {
-            playersPlaying[player] = true;
-            carSelectionUi.ActiveNewPlayer(player);
         }
 
         private void GetChangedCarInput()
         {
             for (int i = 0; i < playersPlaying.Length; i++)
             {
-                string currentController = (i + 1).ToString();
+                if (Input.GetKeyDown(KeyCode.DownArrow) && playersPlaying[i])
+                {
+                    carSelectionUi.GetNextCarForPlayer(i);
+                }
+            }
+        }
+
+        private void GetPlayerReadyInput()
+        {
+            for (int i = 0; i < playersPlaying.Length; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Return) && playersPlaying[i] && !playersReady[i])
+                {
+                    selectedCarByPlayer[i] = carSelectionUi.GetSelectedCarAndSetReady(i);
+                    playersReady[i] = true;
+
+                    TestGameStarted();
+                }
+            }
+        }
+    
+        private void TestGameStarted()
+        {
+            int playerPlayingCount = playersPlaying.Where(a => a).Count();
+            int playerReadyCount = playersReady.Where(a => a).Count();
+            if (playerPlayingCount > 1 && playerPlayingCount == playerReadyCount)
+            {
             }
         }
     }
