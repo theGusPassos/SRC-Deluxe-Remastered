@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Cars;
+using Assets.Scripts.Managers;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Assets.Scripts.UI.Menu.CarSelection
     {
         private CarSelectionUi carSelectionUi;
         [SerializeField] private AvailableCars availableCars;
+        [SerializeField] private GameInitializer gameInitializer;
 
         private bool[] playersPlaying = { true, false, false, false };
         private bool[] playersReady = { false, false, false, false };
@@ -82,6 +84,8 @@ namespace Assets.Scripts.UI.Menu.CarSelection
             int playerReadyCount = playersReady.Where(a => a).Count();
             if (playerPlayingCount > 1 && playerPlayingCount == playerReadyCount)
             {
+                gameInitializer.StartGame(playersPlaying, selectedCarByPlayer);
+                gameObject.SetActive(false);
             }
         }
     }

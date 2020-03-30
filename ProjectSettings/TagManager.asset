@@ -6,6 +6,7 @@ TagManager:
   tags:
   - car
   - floor
+  - start place
   layers:
   - Default
   - TransparentFX
