@@ -548,7 +548,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -847,7 +847,7 @@ RectTransform:
   - {fileID: 2016553869}
   - {fileID: 33712559}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1986,10 +1986,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speed Car
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012922461890, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2020,7 +2016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4000013599042198, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2034,24 +2030,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 292108871, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
-      propertyPath: driftCanvas
-      value: 
-      objectReference: {fileID: 118785869}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfa5f54d41698246b9524640b747550, type: 3}
---- !u!114 &655113068 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 655113068, guid: 9bfa5f54d41698246b9524640b747550,
-    type: 3}
-  m_PrefabInstance: {fileID: 539621946}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 310ee53290601f045b93c34bf28b3965, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &655380297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,7 +4118,7 @@ RectTransform:
   m_Children:
   - {fileID: 231483685}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4171,64 +4151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829c3b9c0487bb64a85f16d649c4a57c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1094790985
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1094790986}
-  - component: {fileID: 1094790987}
-  - component: {fileID: 1094790988}
-  m_Layer: 0
-  m_Name: Input Handler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1094790986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094790985}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.3099146, y: -1.068928, z: -9.519646}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1094790987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094790985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 157ecf7ec5d8f9b4385682418b887bb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carController: {fileID: 1094790988}
---- !u!114 &1094790988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094790985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8149513d14356d47ac4d6d81ee3e0dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  car: {fileID: 655113068}
 --- !u!1 &1132481398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,7 +4349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011954914042, guid: 5e11ff9dd10e30c4392d9e37e25f59e3, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4000011954914042, guid: 5e11ff9dd10e30c4392d9e37e25f59e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4640,6 +4562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1216009000}
   - component: {fileID: 1216009001}
+  - component: {fileID: 1216009002}
   m_Layer: 0
   m_Name: Game Starter
   m_TagString: Untagged
@@ -4659,7 +4582,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1216009001
 MonoBehaviour:
@@ -4675,6 +4598,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableCars: {fileID: 1234274935}
   carPlacer: {fileID: 2023319049}
+--- !u!114 &1216009002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216008999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f09be855a10dc49bd2e2bbc8f9e785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputHandlerPrefab: {fileID: 1833690404331731943, guid: f3c762ca470705c4fa450aa6ab304861,
+    type: 3}
 --- !u!1 &1234274933
 GameObject:
   m_ObjectHideFlags: 0
@@ -4704,7 +4641,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1234274935
 MonoBehaviour:
@@ -7219,7 +7156,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1888678726
 MonoBehaviour:
@@ -7689,7 +7626,7 @@ Transform:
   - {fileID: 1175442439}
   - {fileID: 1521523662}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2023319049
 MonoBehaviour:

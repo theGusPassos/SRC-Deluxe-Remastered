@@ -8,11 +8,13 @@ namespace Assets.Scripts.Managers
     {
         [SerializeField] private AvailableCars availableCars;
         [SerializeField] private CarPlacer carPlacer;
+        [SerializeField] private InputHandlerCreator inputHandlerCreator;
 
         public void StartGame(bool[] playersInGame, int[] carsFromPlayers)
         {
             var carsPrefab = availableCars.GetCarsById(carsFromPlayers);
-            carPlacer.PlaceCars(carsPrefab, playersInGame);
+            var carsInGame = carPlacer.PlaceCars(carsPrefab, playersInGame);
+            inputHandlerCreator.CreateInputHandlers(playersInGame, carsInGame);
         }
     }
 }

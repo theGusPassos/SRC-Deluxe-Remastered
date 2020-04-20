@@ -3,13 +3,19 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controller
 {
+    [RequireComponent(typeof(Car))]
     public class CarController : MonoBehaviour
     {
-        [SerializeField] private Car car;
+        private Car car;
         private WheelFrictionCurve originalFriction;
         private WheelFrictionCurve frictionInHandBrake;
 
         private void Awake()
+        {
+            car = GetComponent<Car>();
+        }
+
+        private void Start()
         {
             originalFriction = car.Wheels[0].wheelCollider.sidewaysFriction;
 

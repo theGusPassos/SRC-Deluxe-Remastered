@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace Assets.Scripts.Controller
 {
+    [RequireComponent(typeof(CarController))]
     public class InputHandler : MonoBehaviour
     {
-        [SerializeField] private CarController carController;
+        public CarController CarController { get; set; }
 
         private void Update()
         {
@@ -15,13 +16,13 @@ namespace Assets.Scripts.Controller
             float acceleratingInput = CarInputInterface.GetAcceleratingInput();
             float breakInput = CarInputInterface.GetBreakInput();
 
-            carController.MoveCar(horizontalInput, acceleratingInput >= 0 ? acceleratingInput : 0, breakInput);
+            CarController.MoveCar(horizontalInput, acceleratingInput >= 0 ? acceleratingInput : 0, breakInput);
 
             if (CarInputInterface.GetHandBreakInput())
-                carController.HandBreak(horizontalInput);
+                CarController.HandBreak(horizontalInput);
 
             if (CarInputInterface.GetHandBreakInputUp())
-                carController.ReleaseHandBreak();
+                CarController.ReleaseHandBreak();
         }
     }
 }
