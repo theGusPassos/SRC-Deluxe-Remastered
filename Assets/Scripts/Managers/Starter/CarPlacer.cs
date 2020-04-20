@@ -11,7 +11,10 @@ namespace Assets.Scripts.Managers.Starter
             for (int i = 0; i < cars.Length; i++)
             {
                 if (playersInGame[i])
-                    Instantiate(cars[i], positions[i].position, positions[i].rotation);
+                {
+                    var obj = Instantiate(cars[i], positions[i].position, positions[i].rotation);
+                    obj.name = $"{cars[i].name} - {i}";
+                }
             }
         }
     }
