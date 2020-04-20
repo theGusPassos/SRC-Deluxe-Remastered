@@ -10,9 +10,12 @@ namespace Assets.Scripts.Controller
         private WheelFrictionCurve originalFriction;
         private WheelFrictionCurve frictionInHandBrake;
 
+        public ControllerState State { get; set; }
+
         private void Awake()
         {
             car = GetComponent<Car>();
+            State = new ControllerState();
         }
 
         private void Start()
@@ -25,6 +28,8 @@ namespace Assets.Scripts.Controller
 
         public void MoveCar(float steering, float acceleration, float brakeForce)
         {
+            if (State.WaitingCountDown) return;
+
             foreach (var wheel in car.Wheels)
             {
                 if (wheel.hasSteering) 

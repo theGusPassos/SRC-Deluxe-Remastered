@@ -7,12 +7,10 @@ namespace Assets.Scripts.Managers.Starter
     {
         [SerializeField] private GameObject inputHandlerPrefab;
 
-        public void CreateInputHandlers(bool[] playersInGame, GameObject[] carsInGame)
+        public void CreateInputHandlers(GameObject[] carsInGame)
         {
-            for (int i = 0; i < playersInGame.Length; i++)
+            for (int i = 0; i < carsInGame.Length; i++)
             {
-                if (!playersInGame[i]) return;
-
                 GameObject inputHandler = Instantiate(inputHandlerPrefab);
                 inputHandler.GetComponent<InputHandler>().CarController
                     = carsInGame[i].GetComponent<CarController>();

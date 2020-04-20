@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Cars;
 using Assets.Scripts.Managers;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -84,9 +85,22 @@ namespace Assets.Scripts.UI.Menu.CarSelection
             int playerReadyCount = playersReady.Where(a => a).Count();
             if (playerPlayingCount > 1 && playerPlayingCount == playerReadyCount)
             {
-                gameInitializer.StartGame(playersPlaying, selectedCarByPlayer);
+                var carsFromActivePlayers = GetCarsFromActivePlayers(playersPlaying, selectedCarByPlayer);
+
+                gameInitializer.StartGame(carsFromActivePlayers);
                 gameObject.SetActive(false);
             }
+        }
+
+        private int[] GetCarsFromActivePlayers(bool[] playersPlaying, int[] cars)
+        {
+            var carsPlaying = new List<int>();
+            for (int i = 0; i < playersPlaying.Length; i++)
+            {
+                if (playersPlaying[i]) carsPlaying.Add(cars[i]);
+            }
+
+            return carsPlaying.ToArray();
         }
     }
 }
