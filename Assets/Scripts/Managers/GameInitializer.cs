@@ -1,7 +1,6 @@
 ﻿using Assets.Scripts.Cars;
 using Assets.Scripts.Managers.Starter;
 using Assets.Scripts.Systems.Observable;
-using Assets.Scripts.UI.Battle;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -11,8 +10,6 @@ namespace Assets.Scripts.Managers
     public class GameInitializer : MonoBehaviour, IEventListener<BattleEvent>
     {
         [SerializeField] private AvailableCars availableCars;
-        [SerializeField] private CarPlacer carPlacer;
-        [SerializeField] private CountDownUi countDownUi;
         private InputHandlerCreator inputHandlerCreator;
         private BattleController battleController;
 
@@ -26,7 +23,12 @@ namespace Assets.Scripts.Managers
             battleController.SubscribeToEvent(this);
         }
 
-        public void StartGame(int[] carsFromPlayers)
+        private void Start()
+        {
+            StartGame(0);   
+        }
+
+        public void StartGame(params int[] carsFromPlayers)
         {
             var carsPrefab = availableCars.GetCarsById(carsFromPlayers);
             carsInstantiated = InstantiateCars(carsPrefab);

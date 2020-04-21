@@ -2,7 +2,6 @@
 using Assets.Scripts.Controller;
 using Assets.Scripts.Managers.Starter;
 using Assets.Scripts.Systems.Observable;
-using Assets.Scripts.UI.Battle;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -18,10 +17,7 @@ namespace Assets.Scripts.Managers
         private CarController[] controllers;
 
         [SerializeField] private CountDown startCountDown;
-        [SerializeField] private CountDownUi startCountDownUi;
-
         [SerializeField] private CountDown battleCountDown;
-        [SerializeField] private CountDownUi battleCountDownUi;
 
         private bool waitingStartCountDown;
         private bool WaitingStartCountDown
@@ -33,12 +29,6 @@ namespace Assets.Scripts.Managers
                     controller.State.WaitingStartCountDown = waitingStartCountDown;
             }
             get => waitingStartCountDown;
-        }
-
-        private void Awake()
-        {
-            startCountDown.SubscribeToEvent(this, startCountDownUi);
-            battleCountDown.SubscribeToEvent(this, battleCountDownUi);
         }
 
         private void GetCarPlacerForCurrentLevel()

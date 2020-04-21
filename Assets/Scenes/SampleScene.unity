@@ -431,6 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47541766}
   - component: {fileID: 47541767}
+  - component: {fileID: 47541768}
   m_Layer: 0
   m_Name: Count Down UI
   m_TagString: Untagged
@@ -468,6 +469,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 158ffc7ef1c706a4f8b6b60c0433b958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &47541768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47541765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c2bfe696d3a1b4eb557b6c2846ac82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &55974259
@@ -4908,8 +4921,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableCars: {fileID: 1234274935}
-  carPlacer: {fileID: 2023319049}
-  countDownUi: {fileID: 47541767}
 --- !u!114 &1216009002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4933,9 +4944,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1216008999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c2bfe696d3a1b4eb557b6c2846ac82, type: 3}
+  m_Script: {fileID: 11500000, guid: dd8672c1dd027b147930cb928c163d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startCountDown: {fileID: 47541768}
+  battleCountDown: {fileID: 1264234164}
 --- !u!1 &1231046451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,6 +5046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1264234162}
   - component: {fileID: 1264234163}
+  - component: {fileID: 1264234164}
   m_Layer: 0
   m_Name: Battle Count Down UI
   m_TagString: Untagged
@@ -5070,6 +5084,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 158ffc7ef1c706a4f8b6b60c0433b958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1264234164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264234161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c2bfe696d3a1b4eb557b6c2846ac82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1303622824
@@ -8204,7 +8230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f59065dbc35a7b43a589942bba5f8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positions:
+  transforms:
   - {fileID: 1303622825}
   - {fileID: 970659324}
   - {fileID: 1175442439}

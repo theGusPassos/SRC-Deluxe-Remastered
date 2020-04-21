@@ -1,15 +1,13 @@
-﻿using Assets.Scripts.Configurations;
-using Assets.Scripts.Managers.Starter;
-using Assets.Scripts.Systems.Observable;
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts.UI.Battle
 {
-    public class CountDownUi : MonoBehaviour, IEventListener<CountDownEvent>
+    public class CountDownUi : MonoBehaviour
     {
         private TextMeshProUGUI textMesh;
+        private int secondsToCount;
         private int seconds = 0;
 
         private void Awake()
@@ -18,37 +16,22 @@ namespace Assets.Scripts.UI.Battle
             textMesh.enabled = false;
         }
 
-        public void SendEvent(CountDownEvent e)
+        public void StartCountDown(int secondsToCount)
         {
-            if (e == CountDownEvent.STARTED)
-            {
-                StartCountDown();
-            }
-            else if (e == CountDownEvent.SECOND_PASSED)
-            {
-                AddSecond();
-            }
-            else if (e == CountDownEvent.ENDED)
-            {
-                EndCountDown();
-            }
-        }
-
-        private void StartCountDown()
-        {
-            textMesh.text = BattleTimer.SecondsToStartRace.ToString();
+            this.secondsToCount = secondsToCount;
+            textMesh.text = secondsToCount.ToString();
             textMesh.enabled = true;
         }
 
-        private void AddSecond()
+        public void AddSecond()
         {
             seconds++;
-            textMesh.text = (BattleTimer.SecondsToStartRace - seconds).ToString();
+            textMesh.text = (secondsToCount - seconds).ToString();
         }
 
-        private void EndCountDown()
+        public void EndCountDown(string textToShow = "")
         {
-            textMesh.text = "GO!";
+            textMesh.text = textToShow;
             StartCoroutine(DisableTextMesh());
         }
 

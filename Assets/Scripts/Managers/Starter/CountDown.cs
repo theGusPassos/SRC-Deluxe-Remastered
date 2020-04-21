@@ -1,23 +1,34 @@
-﻿using Assets.Scripts.Configurations;
-using Assets.Scripts.Systems.Observable;
+﻿using Assets.Scripts.Systems.Observable;
+using Assets.Scripts.UI.Battle;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers.Starter
 {
+    [RequireComponent(typeof(CountDownUi))]
     public class CountDown : IEventSender<CountDownEvent>
     {
-        private int countDown;
+        private CountDownUi countDownUi;
 
-        private bool startedCounting;
+        private int countDown;
         private int currentSecond;
         private float currentTime;
+        private bool startedCounting;
+        private string textToShowOnEnd;
 
-        public void StartCountDown(int countDown)
+        private void Awake()
+        {
+            countDownUi = GetComponent<CountDownUi>();
+        }
+
+        public void StartCountDown(int countDown, string textToShowOnEnd = "")
         {
             this.countDown = countDown;
+            this.textToShowOnEnd = textToShowOnEnd;
+
+            currentTime = currentSecond = 0;
 
             startedCounting = true;
-            currentTime = currentSecond = 0;
+            countDownUi.StartCountDown(countDown);
             SendEvent(CountDownEvent.STARTED);
         }
 
@@ -30,12 +41,13 @@ namespace Assets.Scripts.Managers.Starter
                 if (currentTime > currentSecond + 1)
                 {
                     currentSecond++;
-                    SendEvent(CountDownEvent.SECOND_PASSED);
+                    countDownUi.AddSecond();
                 }
 
                 if (currentTime > countDown)
                 {
                     startedCounting = false;
+                    countDownUi.EndCountDown(textToShowOnEnd);
                     SendEvent(CountDownEvent.ENDED);
                 }
             }
@@ -45,7 +57,6 @@ namespace Assets.Scripts.Managers.Starter
     public enum CountDownEvent
     {
         STARTED,
-        ENDED,
-        SECOND_PASSED
+        ENDED
     }
 }
