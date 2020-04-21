@@ -3,7 +3,6 @@ using Assets.Scripts.Controller;
 using Assets.Scripts.Managers.Starter;
 using Assets.Scripts.Systems.Observable;
 using Assets.Scripts.UI.Battle;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -29,7 +28,7 @@ namespace Assets.Scripts.Managers
         public void StartGame(int[] carsFromPlayers)
         {
             var carsPrefab = availableCars.GetCarsById(carsFromPlayers);
-            var carsInGame = carPlacer.PlaceCars(carsPrefab);
+            var carsInstantiated = InstantiateCars(carsPrefab);
 
             inputHandlerCreator.CreateInputHandlers(carsInGame);
             SetControllers(carsInGame);
@@ -37,6 +36,16 @@ namespace Assets.Scripts.Managers
             SetCarsCountDownState(true);
             countDown.SubscribeToEvent(this, countDownUi);
             countDown.StartCountDown();
+        }
+
+        private GameObject[] InstantiateCars(GameObject[] carsPrefabs)
+        {
+            var carsInstantiated = new GameObject[carsPrefabs.Length];
+
+            for (int i = 0; i < carsPrefabs.Length; i++)
+                carsInstantiated[i] = Instantiate(carsPrefabs[i]);
+
+            return carsInstantiated;
         }
 
         private void SetControllers(GameObject[] carsInGame)
