@@ -14,22 +14,12 @@ namespace Assets.Scripts.Managers
     public class BattleController : IEventSender<BattleEvent>, IEventListener<CountDownEvent>
     {
         private CarPlacer carPlacer;
-        private CarController[] controllers;
+        private CarControllerCollection controllerCollection;
 
         [SerializeField] private CountDown startCountDown;
         [SerializeField] private CountDown battleCountDown;
 
         private bool waitingStartCountDown;
-        private bool WaitingStartCountDown
-        {
-            set
-            {
-                waitingStartCountDown = value;
-                foreach (var controller in controllers)
-                    controller.State.WaitingStartCountDown = waitingStartCountDown;
-            }
-            get => waitingStartCountDown;
-        }
 
         private void Awake()
         {
@@ -43,27 +33,19 @@ namespace Assets.Scripts.Managers
                 .GetComponent<CarPlacer>();
         }
 
-        private void SetControllers(GameObject[] cars)
-        {
-            if (controllers == null)
-            {
-                controllers = new CarController[cars.Length];
-
-                for (int i = 0; i < cars.Length; i++)
-                {
-                    controllers[i] = cars[i].GetComponent<CarController>();
-                }
-            }
-        }
-
         public void StartBattle(GameObject[] cars)
         {
             GetCarPlacerForCurrentLevel();
             carPlacer.PlaceCars(cars);
 
-            SetControllers(cars);
+            if (controllerCollection == null)
+                controllerCollection = new CarControllerCollection(cars);
 
-            WaitingStartCountDown = true;
+            waitingStartCountDown = true;
+
+            controllerCollection.SetOnBattle(true);
+            controllerCollection.SetWaitingStartCountDown(true);
+
             startCountDown.StartCountDown(BattleTimer.SecondsToStartRace, "GO!");
         }
 
@@ -71,13 +53,15 @@ namespace Assets.Scripts.Managers
         {
             if (e == CountDownEvent.ENDED)
             {
-                if (WaitingStartCountDown)
+                if (waitingStartCountDown)
                 {
                     waitingStartCountDown = false;
+                    controllerCollection.SetWaitingStartCountDown(false);
                     battleCountDown.StartCountDown(BattleTimer.SecondsInBattle);
                 }
                 else
                 {
+                    controllerCollection.SetOnBattle(false);
                     SendEvent(BattleEvent.ENDED);
                 }
             }

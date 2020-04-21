@@ -28,7 +28,7 @@ namespace Assets.Scripts.Controller
 
         public void MoveCar(float steering, float acceleration, float brakeForce)
         {
-            if (State.WaitingStartCountDown) return;
+            if (State.CanMove) return;
 
             foreach (var wheel in car.Wheels)
             {
