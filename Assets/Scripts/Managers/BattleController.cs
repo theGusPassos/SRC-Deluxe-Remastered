@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Configurations;
+using Assets.Scripts.Controller;
 using Assets.Scripts.Managers.Starter;
 using Assets.Scripts.Systems.Observable;
 using Assets.Scripts.UI.Battle;
@@ -14,6 +15,7 @@ namespace Assets.Scripts.Managers
     public class BattleController : IEventSender<BattleEvent>, IEventListener<CountDownEvent>
     {
         private CarPlacer carPlacer;
+        private CarController[] controllers;
 
         [SerializeField] private CountDown startCountDown;
         [SerializeField] private CountDownUi startCountDownUi;
@@ -21,7 +23,17 @@ namespace Assets.Scripts.Managers
         [SerializeField] private CountDown battleCountDown;
         [SerializeField] private CountDownUi battleCountDownUi;
 
-        private bool awaitingStartCountDown;
+        private bool waitingStartCountDown;
+        private bool WaitingStartCountDown
+        {
+            set
+            {
+                waitingStartCountDown = value;
+                foreach (var controller in controllers)
+                    controller.State.WaitingStartCountDown = waitingStartCountDown;
+            }
+            get => waitingStartCountDown;
+        }
 
         private void Awake()
         {
@@ -35,12 +47,27 @@ namespace Assets.Scripts.Managers
                 .GetComponent<CarPlacer>();
         }
 
-        public void StartBattle(GameObject[] carPrefabs)
+        private void SetControllers(GameObject[] cars)
+        {
+            if (controllers == null)
+            {
+                controllers = new CarController[cars.Length];
+
+                for (int i = 0; i < cars.Length; i++)
+                {
+                    controllers[i] = cars[i].GetComponent<CarController>();
+                }
+            }
+        }
+
+        public void StartBattle(GameObject[] cars)
         {
             GetCarPlacerForCurrentLevel();
-            carPlacer.PlaceCars(carPrefabs);
+            carPlacer.PlaceCars(cars);
 
-            awaitingStartCountDown = true;
+            SetControllers(cars);
+
+            waitingStartCountDown = true;
             startCountDown.StartCountDown(BattleTimer.SecondsToStartRace);
         }
 
@@ -48,9 +75,9 @@ namespace Assets.Scripts.Managers
         {
             if (e == CountDownEvent.ENDED)
             {
-                if (awaitingStartCountDown)
+                if (WaitingStartCountDown)
                 {
-                    awaitingStartCountDown = false;
+                    waitingStartCountDown = false;
                     battleCountDown.StartCountDown(BattleTimer.SecondsInBattle);
                 }
                 else

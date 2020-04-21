@@ -2,11 +2,11 @@
 {
     public class ControllerState
     {
-        public bool WaitingCountDown { get; set; }
+        public bool WaitingStartCountDown { get; set; }
 
         public ControllerState()
         {
-            WaitingCountDown = false;
+            WaitingStartCountDown = false;
         }
     }
 }

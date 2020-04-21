@@ -67,7 +67,7 @@ namespace Assets.Scripts.Managers
         {
             foreach (var controller in controllers)
             {
-                controller.State.WaitingCountDown = waiting;
+                controller.State.WaitingStartCountDown = waiting;
             }
         }
     }
