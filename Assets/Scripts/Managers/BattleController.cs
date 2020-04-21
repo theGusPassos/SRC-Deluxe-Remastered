@@ -31,6 +31,12 @@ namespace Assets.Scripts.Managers
             get => waitingStartCountDown;
         }
 
+        private void Awake()
+        {
+            startCountDown.SubscribeToEvent(this);
+            battleCountDown.SubscribeToEvent(this);
+        }
+
         private void GetCarPlacerForCurrentLevel()
         {
             carPlacer = GameObject.FindGameObjectWithTag("start place")
@@ -57,8 +63,8 @@ namespace Assets.Scripts.Managers
 
             SetControllers(cars);
 
-            waitingStartCountDown = true;
-            startCountDown.StartCountDown(BattleTimer.SecondsToStartRace);
+            WaitingStartCountDown = true;
+            startCountDown.StartCountDown(BattleTimer.SecondsToStartRace, "GO!");
         }
 
         public void SendEvent(CountDownEvent e)
