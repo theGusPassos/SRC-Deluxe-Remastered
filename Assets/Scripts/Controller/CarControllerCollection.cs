@@ -16,16 +16,10 @@ namespace Assets.Scripts.Controller
             }
         }
 
-        public void SetWaitingStartCountDown(bool waiting)
+        public void SetCanMove(bool waiting)
         {
             foreach (var controller in controllers)
-                controller.State.WaitingStartCountDown = waiting;
-        }
-
-        public void SetOnBattle(bool onBattle)
-        {
-            foreach (var controller in controllers)
-                controller.State.IsInBattle = onBattle;
+                controller.State.CanMove = waiting;
         }
     }
 }

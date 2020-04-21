@@ -42,9 +42,7 @@ namespace Assets.Scripts.Managers
                 controllerCollection = new CarControllerCollection(cars);
 
             waitingStartCountDown = true;
-
-            controllerCollection.SetOnBattle(true);
-            controllerCollection.SetWaitingStartCountDown(true);
+            controllerCollection.SetCanMove(false);
 
             startCountDown.StartCountDown(BattleTimer.SecondsToStartRace, "GO!");
         }
@@ -56,12 +54,12 @@ namespace Assets.Scripts.Managers
                 if (waitingStartCountDown)
                 {
                     waitingStartCountDown = false;
-                    controllerCollection.SetWaitingStartCountDown(false);
+                    controllerCollection.SetCanMove(true);
                     battleCountDown.StartCountDown(BattleTimer.SecondsInBattle);
                 }
                 else
                 {
-                    controllerCollection.SetOnBattle(false);
+                    controllerCollection.SetCanMove(false);
                     SendEvent(BattleEvent.ENDED);
                 }
             }
