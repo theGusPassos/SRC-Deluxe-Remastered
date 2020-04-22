@@ -2,7 +2,7 @@
 
 namespace Assets.Scripts.BattleLevels
 {
-    public class BattleLevelCollection
+    public class BattleLevelCollection : MonoBehaviour
     {
         [SerializeField] private BattleLevel[] battleLevels;
         private int currentLevel = 0;

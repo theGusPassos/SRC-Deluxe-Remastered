@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Cars;
+﻿using Assets.Scripts.BattleLevels;
+using Assets.Scripts.Cars;
 using Assets.Scripts.Managers.Starter;
 using Assets.Scripts.Systems.Observable;
 using UnityEngine;
@@ -10,6 +11,7 @@ namespace Assets.Scripts.Managers
     public class GameInitializer : MonoBehaviour, IEventListener<BattleEvent>
     {
         [SerializeField] private AvailableCars availableCars;
+        [SerializeField] private BattleLevelCollection battleLevelCollection;
         private InputHandlerCreator inputHandlerCreator;
         private BattleController battleController;
 
@@ -56,7 +58,20 @@ namespace Assets.Scripts.Managers
         {
             if (e == BattleEvent.ENDED)
             {
-                Debug.LogError("this battle has ended");
+                HandleBattleEnd();
+            }
+        }
+
+        private void HandleBattleEnd()
+        {
+            battleLevelCollection.GoToNextLevel();
+            if (battleLevelCollection.IsInLastLevel())
+            {
+                Debug.LogError("now is really ended");
+            }
+            else
+            {
+
             }
         }
     }
