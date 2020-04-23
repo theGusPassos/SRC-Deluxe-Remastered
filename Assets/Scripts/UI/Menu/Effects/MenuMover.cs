@@ -9,37 +9,24 @@ namespace Assets.Scripts.UI.Menu.Effects
         [SerializeField] private Vector3 menuDistance;
         [SerializeField] private int currentMenu;
 
-        private Vector3[] menuStartPositions;
-
         private void Awake()
         {
             CalculatePositions();
-            SetMenuStartPositions();
         }
 
         private void CalculatePositions()
         {
-            menuStartPositions = new Vector3[menus.Length];
-
-            for (int i = 0; i < menuStartPositions.Length; i++)
+            for (int i = 0; i < menus.Length; i++)
             {
                 if (i == currentMenu)
                 {
-                    menuStartPositions[i] = transform.position;
+                    menus[i].transform.position = transform.position;
                 }
                 else
                 {
-                    menuStartPositions[i] = transform.position
+                    menus[i].transform.position = transform.position
                         + (i - currentMenu) * menuDistance;
                 }
-            }
-        }
-
-        private void SetMenuStartPositions()
-        {
-            for (int i = 0; i < menus.Length; i++)
-            {
-                menus[i].transform.position = menuStartPositions[i];
             }
         }
 

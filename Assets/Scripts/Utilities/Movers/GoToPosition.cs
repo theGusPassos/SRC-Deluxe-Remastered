@@ -10,7 +10,6 @@ namespace Assets.Scripts.Utilities.Movers
 
         public void SetPositionToGo(Vector3 positionToGo)
         {
-            var thisobj = gameObject.name;
             this.isSet = true;
             this.positionToGo = positionToGo;
         }

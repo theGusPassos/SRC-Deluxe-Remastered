@@ -7,7 +7,7 @@ namespace Assets.Scripts.UI.Menu
     public class MenuManager : MonoBehaviour
     {
         private MenuMover menuMover;
-        private int currentMenu = 1;
+        [SerializeField] private int currentMenu;
         private BaseMenu[] menus;
 
         private void Awake()
