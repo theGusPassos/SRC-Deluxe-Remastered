@@ -27,7 +27,7 @@ namespace Assets.Scripts.Managers
 
         private void Start()
         {
-            StartGame(0);   
+           // StartGame(0);   
         }
 
         public void StartGame(params int[] carsFromPlayers)

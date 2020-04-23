@@ -6,13 +6,10 @@ namespace Assets.Scripts.UI.Menu.Effects
     public class MenuMover : MonoBehaviour
     {
         [SerializeField] private GoToPosition[] menus;
-        [SerializeField] private float menuDistance;
-        private const int firstMenu = 1;
-        private int currentMenu = firstMenu;
+        [SerializeField] private Vector3 menuDistance;
+        [SerializeField] private int currentMenu;
 
-        private Vector3 middlePosition;
-        private Vector3 topPosition;
-        private Vector3 bottomPosition;
+        private Vector3[] menuStartPositions;
 
         private void Awake()
         {
@@ -22,25 +19,37 @@ namespace Assets.Scripts.UI.Menu.Effects
 
         private void CalculatePositions()
         {
-            Vector3 distance = new Vector3(0, menuDistance);
+            menuStartPositions = new Vector3[menus.Length];
 
-            middlePosition = menus[currentMenu].transform.position;
-            topPosition = middlePosition + distance;
-            bottomPosition = middlePosition - distance;
+            for (int i = 0; i < menuStartPositions.Length; i++)
+            {
+                if (i == currentMenu)
+                {
+                    menuStartPositions[i] = transform.position;
+                }
+                else
+                {
+                    menuStartPositions[i] = transform.position
+                        + (i - currentMenu) * menuDistance;
+                }
+            }
         }
 
         private void SetMenuStartPositions()
         {
-            menus[currentMenu - 1].transform.position = topPosition;
-            menus[currentMenu + 1].transform.position = bottomPosition;
+            for (int i = 0; i < menus.Length; i++)
+            {
+                menus[i].transform.position = menuStartPositions[i];
+            }
         }
 
         public void GoToNextMenu()
         {
             if (currentMenu < menus.Length - 1)
             {
-                menus[currentMenu].SetPositionToGo(topPosition);
-                menus[++currentMenu].SetPositionToGo(middlePosition);
+                menus[currentMenu].SetPositionToGo(menus[currentMenu].transform.position - menuDistance);
+                menus[currentMenu + 1].SetPositionToGo(menus[currentMenu + 1].transform.position - menuDistance);
+                currentMenu++;
             }
         }
 
@@ -48,8 +57,9 @@ namespace Assets.Scripts.UI.Menu.Effects
         {
             if (currentMenu > 0)
             {
-                menus[currentMenu].SetPositionToGo(bottomPosition);
-                menus[--currentMenu].SetPositionToGo(middlePosition);
+                menus[currentMenu].SetPositionToGo(menus[currentMenu].transform.position + menuDistance);
+                menus[currentMenu - 1].SetPositionToGo(menus[currentMenu - 1].transform.position + menuDistance);
+                currentMenu--;
             }
         }
     }

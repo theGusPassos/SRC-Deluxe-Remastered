@@ -72,6 +72,9 @@ namespace Assets.Scripts.UI.Menu
             }
         }
 
-        protected virtual void OnOptionSelected() { }
+        protected virtual void OnOptionSelected() 
+        {
+            menuManager.GoToNextMenu();
+        }
     }
 }
