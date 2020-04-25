@@ -419,6 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionCount: 2
+  carSelectionMenu: {fileID: 1087834255}
 --- !u!1 &47541765
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,8 +429,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 47541766}
-  - component: {fileID: 47541767}
   - component: {fileID: 47541768}
+  - component: {fileID: 47541767}
   m_Layer: 0
   m_Name: Count Down UI
   m_TagString: Untagged
@@ -608,7 +609,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1231046452}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -830,7 +831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &214963598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,7 +908,7 @@ RectTransform:
   - {fileID: 2016553869}
   - {fileID: 33712559}
   m_Father: {fileID: 1231046452}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4367,7 +4368,7 @@ RectTransform:
   - {fileID: 47541766}
   - {fileID: 1264234162}
   m_Father: {fileID: 1231046452}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4528,7 +4529,7 @@ RectTransform:
   m_Children:
   - {fileID: 231483685}
   m_Father: {fileID: 1231046452}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5165,7 +5166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableCars: {fileID: 1234274935}
-  battleLevelCollection: {fileID: 0}
+  battleLevelCollection: {fileID: 770005068}
+  battleEndOptions: {fileID: 1793756464}
 --- !u!114 &1216009002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5221,10 +5223,10 @@ Transform:
   m_LocalPosition: {x: 5.7760267, y: -12.592847, z: 9.891741}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 118785870}
   - {fileID: 1022260686}
   - {fileID: 214963601}
   - {fileID: 1087834254}
-  - {fileID: 118785870}
   - {fileID: 1793756460}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -5291,8 +5293,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1264234162}
-  - component: {fileID: 1264234163}
   - component: {fileID: 1264234164}
+  - component: {fileID: 1264234163}
   m_Layer: 0
   m_Name: Battle Count Down UI
   m_TagString: Untagged
@@ -7739,7 +7741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1793756460
 RectTransform:
   m_ObjectHideFlags: 0

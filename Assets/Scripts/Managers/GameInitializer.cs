@@ -2,6 +2,7 @@
 using Assets.Scripts.Cars;
 using Assets.Scripts.Managers.Starter;
 using Assets.Scripts.Systems.Observable;
+using Assets.Scripts.UI.Menu;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -12,6 +13,7 @@ namespace Assets.Scripts.Managers
     {
         [SerializeField] private AvailableCars availableCars;
         [SerializeField] private BattleLevelCollection battleLevelCollection;
+        [SerializeField] private MenuManager battleEndOptions;
         private InputHandlerCreator inputHandlerCreator;
         private BattleController battleController;
 
@@ -67,11 +69,10 @@ namespace Assets.Scripts.Managers
             battleLevelCollection.GoToNextLevel();
             if (battleLevelCollection.IsInLastLevel())
             {
-                Debug.LogError("now is really ended");
             }
             else
             {
-
+                battleEndOptions.gameObject.SetActive(true);
             }
         }
     }
