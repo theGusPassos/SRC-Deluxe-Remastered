@@ -1,12 +1,15 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Scenes;
+using UnityEngine;
 
 namespace Assets.Scripts.UI.Menu
 {
     public class PowerUpSelection : BaseMenu
     {
+        [SerializeField] private SceneLoader sceneLoader;
+
         protected override void OnOptionSelected()
         {
-            Debug.Log("yeah, you're right all the time");
+            sceneLoader.LoadScene("SampleScene");
         }
     }
 }
